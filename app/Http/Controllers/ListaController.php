@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateResquest;
 use App\Lista;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class ListaController extends Controller
         return view ('admin.lista.create');
     }
     
-    public function store(Request $request)
+    public function store(StoreUpdateResquest $request)
     {
         $dados = $request->all();
         Lista::create($dados);

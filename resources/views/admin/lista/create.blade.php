@@ -1,4 +1,13 @@
 <h1>Cadastrando novo funcionario</h1>
+@if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+            
+        @endforeach
+    </div>
+    
+@endif
 
 <form action="{{ route('lista.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
