@@ -3,7 +3,7 @@
 <a href="{{ route('lista.create')}}">cadadastrar novo funcionario</a>
 
 
-<table>
+<table width="100%" border="1">
     <thead>
        <tr>
            <th>Id</th>
@@ -15,8 +15,27 @@
            <th>Setor</th>
            <th>Salario</th>
            <th>Editar</th>  
-           <th>Deletar</th>  
+             
         </tr> 
        
     </thead>
+    <tbody>
+        @foreach ($listas as $lista)
+            <tr>
+                <td>{{ $lista->id }}</td>
+                <td>{{ $lista->name }}</td>
+                <td>{{ $lista->idade }}</td>
+                <td>{{ $lista->cpf }}</td>
+                <td>{{ $lista->email }}</td>
+                <td>{{ $lista->cargo }}</td>
+                <td>{{ $lista->setor }}</td>
+                <td>{{ $lista->salario }}</td>
+                <td><a href="">Editar</a></td>
+                
+
+
+            </tr>
+            
+        @endforeach
+    </tbody>
 </table>

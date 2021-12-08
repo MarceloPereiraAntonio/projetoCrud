@@ -26,11 +26,11 @@ class StoreUpdateResquest extends FormRequest
         return [
             'name'=>'required|max:255',
             'idade'=>'required',
-            'cpf'=>'required|unique|max:11',
+            'cpf'=>'required|unique:lista|max:11',
             'email'=>'required|max:255',
             'cargo'=>'required',
             'setor'=>'required',
-            'salario'=>'required'
+            'salario'=>'nullable'
         ];
     }
     public function messages()
