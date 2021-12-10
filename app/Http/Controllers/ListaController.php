@@ -27,4 +27,23 @@ class ListaController extends Controller
         return redirect()->route('lista.index');
 
     }
+
+    public function edit($id)
+    {
+       
+        if(!$listas=Lista::find($id));
+        {
+            return redirect()->back();
+        }
+
+       return view ('admin.lista.edit', compact('lista'));
+        
+        
+    }
+
+    public function update(StoreUpdateResquest $request, $id)
+    {
+        
+      }
+    
 }

@@ -22,5 +22,6 @@
     <input type="text" name="setor" placeholder="Setor">
     <input type="number" name="salario" placeholder="Salario"> <br> <br>
     <button type="submit">cadastrar</button>
+    <a href="{{ route('lista.index')}}">voltar</a>
 
 </form>

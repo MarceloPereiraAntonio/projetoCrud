@@ -18,4 +18,6 @@
 'Route'::get('/lista', 'ListaController@index')->name('lista.index');
 'Route'::get('/lista/create', 'Listacontroller@create')->name('lista.create');
 'Route'::post('/lista', 'Listacontroller@store')->name('lista.store');
+'Route'::get('/lista/edit/{id}', 'Listacontroller@edit')->name('lista.edit');
+'Route'::put('/lista/{id}', 'Listacontroller@update')->name('lista.update');
 

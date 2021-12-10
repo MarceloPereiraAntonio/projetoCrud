@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreUpdateResquest extends FormRequest
 {
@@ -23,15 +24,29 @@ class StoreUpdateResquest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'=>'required|max:255',
-            'idade'=>'required',
-            'cpf'=>'required|unique:lista|max:11',
-            'email'=>'required|max:255',
-            'cargo'=>'required',
-            'setor'=>'required',
-            'salario'=>'nullable'
+        $id=$this->segment(2);
+        $rules = [
+            'name'=>[
+                'required',
+                'max:255'],
+            'idade'=>[ 
+                'required'],
+            'cpf'=>[
+                'required',
+                'max:11',
+                Rule::unique('lista')->ignore($id)],
+            'email'=>[
+                'required',
+                'max:255'],
+            'cargo'=>[
+                'required'],
+            'setor'=>[
+                'required'],
+            'salario'=>[
+                'nullable'],
+
         ];
+        return $rules;
     }
     public function messages()
     {

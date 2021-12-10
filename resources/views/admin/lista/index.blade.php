@@ -30,7 +30,7 @@
                 <td>{{ $lista->cargo }}</td>
                 <td>{{ $lista->setor }}</td>
                 <td>{{ $lista->salario }}</td>
-                <td><a href="">Editar</a></td>
+                <td><a href="{{route('lista.edit', $lista->id)}}">Editar</a></td>
                 
 
 
