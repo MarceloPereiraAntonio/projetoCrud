@@ -53,4 +53,14 @@ class ListaController extends Controller
         
     }
     
+    public function distroy($id)
+    {
+        if(!$lista=Lista::find($id))
+        {
+            return redirect()->bach();
+        }
+        $lista->delete();
+        return redirect()->route('lista.index');
+    }
+    
 }

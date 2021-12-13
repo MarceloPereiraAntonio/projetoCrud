@@ -27,7 +27,7 @@
     
 
 </form>
-<form action="" method="post">
+<form action="{{route('lista.distroy', $lista->id)}}" method="post">
     @csrf
     @method('DELETE')
 <button type="submit">Deletar</button>
