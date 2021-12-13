@@ -1,8 +1,9 @@
 <h1>Cadastrando novo funcionario</h1>
+
 @if ($errors->any())
     <div>
         @foreach ($errors->all() as $error)
-            <p>{{ $error }}</p>
+            <li style="color: red">{{ $error }}</li>
             
         @endforeach
     </div>

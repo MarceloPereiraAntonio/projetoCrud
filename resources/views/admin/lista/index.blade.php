@@ -14,7 +14,8 @@
            <th>Cargo</th>
            <th>Setor</th>
            <th>Salario</th>
-           <th>Editar</th>  
+           <th>Editar</th>
+              
              
         </tr> 
        

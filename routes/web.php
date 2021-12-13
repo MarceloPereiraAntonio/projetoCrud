@@ -20,4 +20,5 @@
 'Route'::post('/lista', 'Listacontroller@store')->name('lista.store');
 'Route'::get('/lista/edit/{id}', 'Listacontroller@edit')->name('lista.edit');
 'Route'::put('/lista/{id}', 'Listacontroller@update')->name('lista.update');
+'Route'::delete('/lista/{id}', 'Listacontroller@distroy')->name('lista.distroy');
 

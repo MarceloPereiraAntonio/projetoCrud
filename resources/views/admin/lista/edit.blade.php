@@ -24,6 +24,13 @@
     <input type="text" name="setor" placeholder="Setor" value="{{$lista->setor}}">
     <input type="number" name="salario" placeholder="Salario" value="{{$lista->salario}}"> <br> <br>
     <button type="submit">Salvar</button>
-    <a href="{{ route('lista.index')}}">voltar</a>
+    
+
+</form>
+<form action="" method="post">
+    @csrf
+    @method('DELETE')
+<button type="submit">Deletar</button>
+<a href="{{ route('lista.index')}}">voltar</a>
 
 </form>

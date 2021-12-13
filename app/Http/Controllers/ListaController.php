@@ -31,7 +31,7 @@ class ListaController extends Controller
     public function edit($id)
     {
        
-        if(!$listas=Lista::find($id));
+        if(!$lista=Lista::find($id))
         {
             return redirect()->back();
         }
@@ -43,7 +43,14 @@ class ListaController extends Controller
 
     public function update(StoreUpdateResquest $request, $id)
     {
+        if(!$lista=Lista::find($id))
+        {
+            return redirect()->back();
+        }
+       $lista->update($request->all());
+       return redirect()->route('lista.index');
         
-      }
+        
+    }
     
 }

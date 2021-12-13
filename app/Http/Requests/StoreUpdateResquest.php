@@ -33,6 +33,7 @@ class StoreUpdateResquest extends FormRequest
                 'required'],
             'cpf'=>[
                 'required',
+                'min:11',
                 'max:11',
                 Rule::unique('lista')->ignore($id)],
             'email'=>[
@@ -51,7 +52,16 @@ class StoreUpdateResquest extends FormRequest
     public function messages()
     {
         return[
-        'name.required'=>'Insira um nome'
+        'name.required'=>'Insira o seu nome',
+        'name.max'=>'Maximo de caracteres 255',
+        'idade.required'=>'Insira sua idade',
+        'cpf.required'=>'Insira o CPF',
+        'cpf.min'=>'CPF deve conter 11 digitos',
+        'cpf.max'=>'CPF deve conter 11 digitos',
+        'cpf.unique'=>'Esse CPF ja está cadastrado',
+        'email.required'=>'Insira o email',
+        'cargo.required'=>'Insira o cargo',
+        'setor.required'=>'Insira o setor',
         ];
     }
     
