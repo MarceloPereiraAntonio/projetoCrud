@@ -10,7 +10,7 @@ class ListaController extends Controller
 {
     public function index()
     {
-        $listas =Lista::paginate();
+        $listas =Lista::paginate(5);
         return view ('admin.lista.index', compact('listas'));
         
     }

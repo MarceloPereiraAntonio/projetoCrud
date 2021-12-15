@@ -1,12 +1,13 @@
-<h1>Lista de funcionários</h1>
+@include('admin.layouts.app')
+<h1 style="text-align: center">Lista de funcionários</h1>
 
-<a href="{{ route('lista.create')}}">cadadastrar novo funcionario</a>
+<a href="{{ route('lista.create')}}" class="btn btn-outline-primary " style="float: right">cadadastrar novo funcionario</a>
+<br><br>
 
-
-<table width="100%" border="1">
+<table class="table table-hover">
     <thead>
        <tr>
-           <th>Id</th>
+           <th >Id</th>
            <th>Nome</th> 
            <th>Idade</th> 
            <th>Documento</th> 
@@ -31,7 +32,7 @@
                 <td>{{ $lista->cargo }}</td>
                 <td>{{ $lista->setor }}</td>
                 <td>{{ $lista->salario }}</td>
-                <td><a href="{{route('lista.edit', $lista->id)}}">Editar</a></td>
+                <td><a href="{{route('lista.edit', $lista->id)}}" class="btn btn-warning">Editar</a></td>
                 
 
 
@@ -40,3 +41,4 @@
         @endforeach
     </tbody>
 </table>
+{!! $listas->links() !!}
